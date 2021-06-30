@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Others</title>
+    <style>
+        h1 {text-align: center}
+    </style>
+</head>
+<body>
+  <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/calendar">Calendar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/flight">Flight Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/baggage">Baggage Preparation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cost_estimation">Cost Estimation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/others">Others</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{ time_message }}</a>
+      </li>
+  </ul>
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6>Some policies</h6>
+    <h6 class="border-bottom pb-2 mb-0">一些值得留意的政策</h6>
+    {% if tb_policies %}
+      {% for policy in tb_policies %}
+        <div class="d-flex text-muted pt-3">
+          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+          <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">@{{policy[0]}} {{policy[1]}}</strong>
+            {{policy[2]}}
+          </p>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6>Some links</h6>
+    <h6 class="border-bottom pb-2 mb-0">具有可读性的文章链接</h6>
+    {% if tb_links %}
+      {% for link in tb_links %}
+        <div class="d-flex text-muted pt-3">
+          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#00ffff"></rect><text x="50%" y="50%" fill="#00ffff" dy=".3em">32x32</text></svg>
+          <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">@{{link[0]}} {{link[1]}}</strong>
+            <a href={{link[2]}}>{{link[2]}}</a>
+          </p>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
