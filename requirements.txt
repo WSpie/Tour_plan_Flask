@@ -1,0 +1,6 @@
+pytz
+flask
+flask_wtf
+selenium
+beautifulsoup4
+html5lib

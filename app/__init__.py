@@ -64,7 +64,7 @@ def insert():
         start = request.form['start']
         end = request.form['end']
         cost = request.form['cost']
-        cursor.execute("INSERT INTO events (title, start_event, end_event, cost) VALUES (%s, %s, %s, %s)", [title, start, end, cost])
+        cursor.execute(f"INSERT INTO events (title, start_event, end_event, cost) VALUES ({title}, {start}, {end}, {cost})")
         cursor.close()
         connection.commit()
         connection.close()

@@ -3,9 +3,7 @@
 import sqlite3
 import os
 from selenium import webdriver
-from requests_html import HTMLSession
 from bs4 import BeautifulSoup
-from lxml import etree
 import time
 
 FLAGS = ['Google', 'Ctrip', 'Qunar', 'Fliggy']
